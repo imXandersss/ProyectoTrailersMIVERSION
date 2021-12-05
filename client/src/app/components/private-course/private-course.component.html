@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="col-md-4 mx-auto">
+        <div class="card border-primary mb-3">
+            <div class="card-header">
+                Agregar Trailer
+            </div>
+            <div class="card-body">
+                <form (submit)="createCourse()" action="/course/edit/{{course._id}}" method="POST">
+                    <div class="form-group">
+                        <input type="text" [(ngModel)]="course.name" name="name" class="form-control" placeholder="Name" required autofocus>
+                    </div>
+                    <div class="form-group mt-3">
+                        <textarea name="description" [(ngModel)]="course.description" placeholder="Description" rows="2" class="form-control"></textarea>
+                        <!-- <input type="text" [(ngModel)]="course.description" name="description" class="form-control" placeholder="Description" required > -->
+                    </div>
+                    <div class="form-group mt-3">
+                        <input type="text" [(ngModel)]="course.category" name="category" class="form-control" placeholder="Category" required>
+                    </div>
+                    <div class="form-group mt-3">
+                        <input type="text" [(ngModel)]="course.director" name="director" class="form-control" placeholder="director" required>
+                    </div>
+                    <div class="form-group mt-3">
+                        <input type="text" [(ngModel)]="course.actors" name="actors" class="form-control" placeholder="actors" required>
+                    </div>
+                    <div class="form-group mt-3">
+                        <input type="text" [(ngModel)]="course.year" name="year" class="form-control" placeholder="Imagen" required>
+                    </div>
+                    <div class="form-group mt-3">
+                        <input type="text" [(ngModel)]="course.link" name="link" class="form-control" placeholder="link" required>
+                    </div>
+
+
+                    <div class="form-group mt-3">
+                        <button type="submit" class="btn btn-primary mt-3 container " routerLinkActive="router-link-active">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mx-auto">
+        <div id="cardMuestra" class="card border-warning mb-3 card-body">
+            <img [src]="course.year == '' ? '/assets/noimg.png' : course.year" class="card-img-top">
+            <h3>{{course.name == '' ? 'Nombre del Trailer': course.name}}</h3>
+            <p> Categoria: {{course.category}}</p>
+            <p> {{course.description == '' ? 'Reseña': course.description}}</p>
+            <p>{{course.director == '' ? 'Director': course.director}}</p>
+            <p>{{course.actors == '' ? 'Actores:': course.actors}}</p>
+            <p>{{course.link == '' ? 'Link del trailer': course.link}}</p>
+
+
+        </div>
+    </div>
+</div>

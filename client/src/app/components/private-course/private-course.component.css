@@ -1,0 +1,14 @@
+.image{
+  width: 360px;
+}
+.row{
+ 
+  display: flex !important;
+  flex-wrap: wrap;
+  display: inline-block;
+}
+
+#cardMuestra{
+  
+  border-radius: 10px;
+}
